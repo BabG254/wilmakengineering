@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "./../../assets/logo.png"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +25,7 @@ const Navbar = () => {
             <Link href="/">
               <a className="flex items-center">
                 <img 
-                  src="/logo.png" 
+                  src={logo}
                   alt="WILMAK Logo" 
                   className="h-12 w-auto"
                   onError={(e) => {
