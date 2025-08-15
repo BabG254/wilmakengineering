@@ -327,7 +327,7 @@ const Blog = () => {
                 <Button
                   variant="outline"
                   className="w-full text-[#006400] hover:bg-[#006400] hover:text-white border-[#006400]"
-                  onClick={() => window.location.href = "/#contact"}
+                  onClick={() => window.location.href = "/contact"}
                 >
                   Subscribe to Updates
                 </Button>

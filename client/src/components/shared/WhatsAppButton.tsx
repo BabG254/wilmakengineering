@@ -72,24 +72,6 @@ const WhatsAppButton = () => {
           </div>
         )}
       </Button>
-      
-      {/* Style for animation */}
-      <style jsx global>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .animate-fade-in-up {
-          animation: fadeInUp 0.3s ease-out forwards;
-        }
-      `}</style>
     </div>
   );
 };

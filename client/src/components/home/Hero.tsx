@@ -30,11 +30,7 @@ const Hero = () => {
             <Button
               size="lg"
               className="bg-[#E76F00] hover:bg-[#D65F00] text-white"
-              onClick={() => {
-                document
-                  .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }}
+              onClick={() => window.location.href = "/contact"}
             >
               Get in Touch
               <ArrowRight className="ml-2 h-5 w-5" />

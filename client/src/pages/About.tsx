@@ -262,7 +262,7 @@ const About = () => {
           <Button 
             size="lg" 
             className="bg-[#E76F00] hover:bg-[#D65F00] text-white"
-            onClick={() => window.location.href = "#contact"}
+            onClick={() => window.location.href = "/contact"}
             data-aos="fade-up"
             data-aos-delay="200"
           >

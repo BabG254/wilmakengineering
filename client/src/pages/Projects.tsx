@@ -161,7 +161,7 @@ const Projects = () => {
             <Button
               size="lg"
               className="bg-[#E76F00] hover:bg-[#D65F00] text-white"
-              onClick={() => window.location.href = "/#contact"}
+              onClick={() => window.location.href = "/contact"}
             >
               Get a Quote
               <ArrowRight className="ml-2 h-5 w-5" />
