@@ -17,7 +17,7 @@ const staticBlogPosts = [
   {
     id: 1,
     title: "Energy Efficiency in Commercial Refrigeration",
-    content: "In today's world, energy efficiency isn't just good for the environment—it's good for business too. Commercial refrigeration systems can account for a significant portion of a business's energy consumption. At WILMAK Engineering, we specialize in designing and installing energy-efficient refrigeration systems that can significantly reduce operational costs without compromising performance.",
+    content: "In today's world, energy efficiency isn't just good for the environment—it's good for business too. Commercial refrigeration systems can account for a significant portion of a business's energy consumption. At WILMAK Engineering, we specialize in designing and installing energy-efficient refrigeration systems that can significantly reduce operational costs without compromising performance. Our team of experts can assess your current system and recommend upgrades that will maximize efficiency while ensuring optimal cooling performance for your specific needs.",
     imageUrl: "https://images.unsplash.com/photo-1606857521015-7f9fcf423740",
     publishedAt: "2023-09-01",
     author: "David Njoroge, Chief Engineer"
@@ -25,7 +25,7 @@ const staticBlogPosts = [
   {
     id: 2,
     title: "The Importance of Regular HVAC Maintenance",
-    content: "Regular maintenance of your HVAC systems is crucial for ensuring optimal performance and longevity. In this post, we discuss the key benefits of scheduled maintenance and what it should include. Preventive maintenance is far more cost-effective than emergency repairs.",
+    content: "Regular maintenance of your HVAC systems is crucial for ensuring optimal performance and longevity. In this post, we discuss the key benefits of scheduled maintenance and what it should include. Preventive maintenance is far more cost-effective than emergency repairs. By implementing a regular maintenance schedule, businesses can avoid unexpected breakdowns, extend equipment life, improve indoor air quality, and maintain energy efficiency. WILMAK Engineering offers comprehensive maintenance plans tailored to your specific system requirements.",
     imageUrl: "https://images.unsplash.com/photo-1617104678798-08925113358b",
     publishedAt: "2023-10-15",
     author: "Jane Mwangi, Technical Director"
@@ -33,7 +33,7 @@ const staticBlogPosts = [
   {
     id: 3,
     title: "Innovations in Ventilation Technology",
-    content: "Ventilation technology has seen remarkable advancements in recent years, with new systems offering improved air quality, energy efficiency, and smart controls. As specialists in ventilation systems, WILMAK Engineering stays at the forefront of these innovations to provide our clients with cutting-edge solutions.",
+    content: "Ventilation technology has seen remarkable advancements in recent years, with new systems offering improved air quality, energy efficiency, and smart controls. As specialists in ventilation systems, WILMAK Engineering stays at the forefront of these innovations to provide our clients with cutting-edge solutions. Modern ventilation systems now incorporate sensors that monitor air quality in real-time, automatically adjusting airflow to maintain optimal conditions while minimizing energy consumption. These smart systems can be integrated with building management systems for comprehensive control and monitoring.",
     imageUrl: "https://images.unsplash.com/photo-1585503418537-88331351ad99",
     publishedAt: "2023-12-05",
     author: "Peter Kinyua, Innovation Lead"
@@ -41,7 +41,7 @@ const staticBlogPosts = [
   {
     id: 4,
     title: "Selecting the Right Commercial Kitchen Equipment",
-    content: "Selecting appropriate commercial kitchen equipment is a critical decision that impacts operational efficiency, food quality, and energy consumption. As specialists in kitchen equipment installation, WILMAK Engineering offers expert guidance on making these important choices.",
+    content: "Selecting appropriate commercial kitchen equipment is a critical decision that impacts operational efficiency, food quality, and energy consumption. As specialists in kitchen equipment installation, WILMAK Engineering offers expert guidance on making these important choices. When designing a commercial kitchen, factors such as space utilization, workflow optimization, energy efficiency, and compliance with health regulations must be carefully considered. Our team works closely with restaurant owners and chefs to create customized solutions that meet their specific culinary needs while maximizing operational efficiency.",
     imageUrl: "https://images.unsplash.com/photo-1588542997599-d74953c59498",
     publishedAt: "2024-01-20",
     author: "Stephen Kimani, Project Manager"
@@ -49,10 +49,50 @@ const staticBlogPosts = [
   {
     id: 5,
     title: "Safety Considerations for LP Gas Installations",
-    content: "LP (Liquefied Petroleum) gas installations require careful planning and adherence to strict safety standards to prevent hazardous situations. As specialists in LP gas systems, WILMAK Engineering prioritizes safety in every installation and maintenance service we provide.",
+    content: "LP (Liquefied Petroleum) gas installations require careful planning and adherence to strict safety standards to prevent hazardous situations. As specialists in LP gas systems, WILMAK Engineering prioritizes safety in every installation and maintenance service we provide. Proper gas system design includes appropriate tank placement, secure piping installations, leak detection systems, and automatic shutoff valves. Regular inspections and maintenance are essential to ensure continued safe operation. Our certified technicians follow international best practices and local regulations for all LP gas installations.",
     imageUrl: "https://images.unsplash.com/photo-1623911329432-e2cbd7760e5b",
     publishedAt: "2024-02-10",
     author: "George Omondi, Safety Compliance Manager"
+  },
+  {
+    id: 6,
+    title: "Sustainable HVAC Solutions for Modern Buildings",
+    content: "Sustainability is becoming increasingly important in building design and operation. Modern HVAC systems must balance comfort, efficiency, and environmental impact. At WILMAK Engineering, we specialize in designing sustainable HVAC solutions that reduce carbon footprint while maintaining optimal indoor comfort. Technologies such as heat recovery ventilation, variable refrigerant flow systems, and smart building integration can significantly reduce energy consumption. Our approach includes comprehensive building analysis to identify the most effective sustainable technologies for each specific project.",
+    imageUrl: "https://images.unsplash.com/photo-1497366811353-6870744d04b2",
+    publishedAt: "2024-03-05",
+    author: "Sarah Wangari, Sustainability Consultant"
+  },
+  {
+    id: 7,
+    title: "Refrigeration Maintenance Best Practices for Food Service",
+    content: "Proper maintenance of refrigeration systems is critical in the food service industry, where equipment failure can lead to significant product loss and food safety concerns. This article outlines essential maintenance practices that food service businesses should implement to ensure reliable refrigeration performance. From regular cleaning of condenser coils to monitoring refrigerant levels and inspecting door seals, these practices help prevent unexpected breakdowns and extend equipment life. WILMAK Engineering offers specialized maintenance programs for food service refrigeration that help businesses maintain food safety compliance while optimizing operational costs.",
+    imageUrl: "https://images.unsplash.com/photo-1589459362865-o6c0dfa6bc8c",
+    publishedAt: "2024-03-18",
+    author: "James Kamau, Refrigeration Specialist"
+  },
+  {
+    id: 8,
+    title: "Commercial Air Quality Solutions for Post-Pandemic Workplaces",
+    content: "The COVID-19 pandemic has heightened awareness of indoor air quality in commercial spaces. Businesses are now prioritizing ventilation and filtration systems that can reduce airborne contaminants and provide healthier indoor environments. This article explores effective air quality solutions for commercial buildings, including enhanced filtration systems, UV germicidal irradiation, and increased fresh air exchange. WILMAK Engineering provides comprehensive air quality assessments and can recommend and implement appropriate upgrades to existing HVAC systems to address modern air quality concerns.",
+    imageUrl: "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0",
+    publishedAt: "2024-04-02",
+    author: "Dr. Elizabeth Maina, Public Health Consultant"
+  },
+  {
+    id: 9,
+    title: "Industrial Cooling Towers: Efficiency and Maintenance",
+    content: "Cooling towers are critical components in many industrial processes, providing essential heat rejection for manufacturing facilities, power plants, and large commercial buildings. This article discusses strategies for optimizing cooling tower efficiency and implementing effective maintenance protocols. Regular maintenance including water treatment, mechanical inspection, and performance monitoring can prevent biological growth, scale formation, and mechanical failures. WILMAK Engineering offers specialized services for industrial cooling tower design, installation, and maintenance to ensure optimal performance and longevity.",
+    imageUrl: "https://images.unsplash.com/photo-1635612014204-b8b39572895d",
+    publishedAt: "2024-04-15",
+    author: "Michael Otieno, Industrial Systems Engineer"
+  },
+  {
+    id: 10,
+    title: "Smart Building Integration for HVAC Systems",
+    content: "Smart building technology is revolutionizing how HVAC systems operate, offering unprecedented levels of control, efficiency, and comfort. This article explores how modern HVAC systems can be integrated with building management systems to create intelligent environments that respond to occupancy patterns, weather conditions, and user preferences. From IoT sensors to predictive maintenance algorithms, these technologies are transforming building operations. WILMAK Engineering specializes in implementing smart HVAC solutions that can be seamlessly integrated into new or existing buildings, providing clients with advanced control capabilities and significant energy savings.",
+    imageUrl: "https://images.unsplash.com/photo-1558002038-1055907df827",
+    publishedAt: "2024-04-28",
+    author: "Daniel Mutua, Building Automation Specialist"
   }
 ];
 

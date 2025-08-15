@@ -44,6 +44,38 @@ const staticProjects = [
     imageUrl: "https://images.unsplash.com/photo-1626446525425-d15c4ca62d27",
     category: "LP Gas",
     completionDate: "2024-03-05"
+  },
+  {
+    id: 6,
+    title: "Corporate Office HVAC Renovation",
+    description: "Complete renovation of the air conditioning and ventilation system for a 10-floor corporate headquarters in Nairobi CBD. The project focused on energy efficiency, improved air quality, and zoned climate control for different office areas.",
+    imageUrl: "https://images.unsplash.com/photo-1581094794329-c8112a89af12",
+    category: "Air Conditioning",
+    completionDate: "2023-09-12"
+  },
+  {
+    id: 7,
+    title: "Cold Storage Facility",
+    description: "Construction of a large-scale cold storage facility for a food distribution company. The project included multiple temperature zones, advanced insulation, energy-efficient refrigeration systems, and digital monitoring solutions.",
+    imageUrl: "https://images.unsplash.com/photo-1542013936693-884638332954",
+    category: "Refrigeration",
+    completionDate: "2024-02-20"
+  },
+  {
+    id: 8,
+    title: "School Ventilation Upgrade",
+    description: "Modernization of ventilation systems for a large educational institution. The project improved air circulation, reduced CO2 levels in classrooms, and implemented energy recovery ventilators to maintain air quality while minimizing energy costs.",
+    imageUrl: "https://images.unsplash.com/photo-1623743932725-8d99c82e90f7",
+    category: "Ventilation",
+    completionDate: "2024-04-10"
+  },
+  {
+    id: 9,
+    title: "Shopping Mall HVAC System",
+    description: "Installation of a comprehensive HVAC solution for a new shopping mall in Kisumu. The system features variable refrigerant flow technology, digital controls, and integration with the building management system for optimal energy efficiency.",
+    imageUrl: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461",
+    category: "Air Conditioning",
+    completionDate: "2023-10-25"
   }
 ];
 
