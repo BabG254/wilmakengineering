@@ -1,8 +1,11 @@
 {
   "routes": [
+    { 
+      "handle": "filesystem"
+    },
     {
-      "src": "/(.*)",
-      "dest": "/dist/$1"
+      "src": "/.*",
+      "dest": "/dist/index.html"
     }
   ],
   "builds": [
@@ -11,5 +14,4 @@
       "use": "@vercel/static"
     }
   ]
-
 }
