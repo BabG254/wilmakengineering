@@ -48,10 +48,20 @@ export const queryClient = new QueryClient({
       refetchInterval: false,
       refetchOnWindowFocus: false,
       staleTime: Infinity,
-      retry: false,
+      retry: 2,
+      retryDelay: 1000,
+      refetchOnMount: true,
+      onError: (error) => {
+        console.error("Query error:", error);
+      },
+      // Default to empty arrays for data endpoints to prevent null errors
+      placeholderData: (previousData) => previousData || [],
     },
     mutations: {
-      retry: false,
+      retry: 1,
+      onError: (error) => {
+        console.error("Mutation error:", error);
+      },
     },
   },
 });
