@@ -26,6 +26,7 @@ var MemStorage = class {
     this.initSampleData();
   }
   initSampleData() {
+    console.log("Initializing sample data...");
     const sampleProjects = [
       {
         title: "Commercial Refrigeration System",
@@ -115,6 +116,7 @@ var MemStorage = class {
     sampleProjects.forEach((project) => {
       this.createProject(project);
     });
+    console.log(`Added ${sampleProjects.length} sample projects`);
     const sampleTestimonials = [
       {
         name: "John Kamau",
@@ -232,10 +234,13 @@ var MemStorage = class {
     sampleBlogPosts.forEach((blogPost) => {
       this.createBlogPost(blogPost);
     });
+    console.log(`Added ${sampleBlogPosts.length} sample blog posts`);
   }
   // Project methods
   async getAllProjects() {
-    return Array.from(this.projects.values());
+    const projects2 = Array.from(this.projects.values());
+    console.log(`Getting all projects: ${projects2.length}`);
+    return projects2;
   }
   async getProjectById(id) {
     return this.projects.get(id);
@@ -261,7 +266,9 @@ var MemStorage = class {
   }
   // Blog post methods
   async getAllBlogPosts() {
-    return Array.from(this.blogPosts.values());
+    const posts = Array.from(this.blogPosts.values());
+    console.log(`Getting all blog posts: ${posts.length}`);
+    return posts;
   }
   async getBlogPostById(id) {
     return this.blogPosts.get(id);
@@ -331,8 +338,10 @@ async function registerRoutes(app2) {
   app2.get("/api/projects", async (_req, res) => {
     try {
       const projects2 = await storage.getAllProjects();
+      console.log("API: Projects fetched:", projects2.length);
       res.json(projects2);
     } catch (error) {
+      console.error("API Error:", error);
       res.status(500).json({ message: "Failed to fetch projects" });
     }
   });
@@ -347,8 +356,10 @@ async function registerRoutes(app2) {
   app2.get("/api/blog-posts", async (_req, res) => {
     try {
       const posts = await storage.getAllBlogPosts();
+      console.log("API: Blog posts fetched:", posts.length);
       res.json(posts);
     } catch (error) {
+      console.error("API Error:", error);
       res.status(500).json({ message: "Failed to fetch blog posts" });
     }
   });

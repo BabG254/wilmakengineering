@@ -51,11 +51,8 @@ export const queryClient = new QueryClient({
       retry: 2,
       retryDelay: 1000,
       refetchOnMount: true,
-      onError: (error) => {
-        console.error("Query error:", error);
-      },
       // Default to empty arrays for data endpoints to prevent null errors
-      placeholderData: (previousData) => previousData || [],
+      placeholderData: (previousData: unknown) => previousData || [],
     },
     mutations: {
       retry: 1,

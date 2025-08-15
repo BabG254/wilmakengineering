@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer } from "http";
 import { storage } from "./storage";
-import { insertContactMessageSchema } from "@shared/schema";
+import { insertContactMessageSchema } from "../shared/schema";
 import { ZodError } from "zod";
 
 export async function registerRoutes(app: Express) {
@@ -9,8 +9,10 @@ export async function registerRoutes(app: Express) {
   app.get("/api/projects", async (_req, res) => {
     try {
       const projects = await storage.getAllProjects();
+      console.log("API: Projects fetched:", projects.length);
       res.json(projects);
     } catch (error) {
+      console.error("API Error:", error);
       res.status(500).json({ message: "Failed to fetch projects" });
     }
   });
@@ -27,8 +29,10 @@ export async function registerRoutes(app: Express) {
   app.get("/api/blog-posts", async (_req, res) => {
     try {
       const posts = await storage.getAllBlogPosts();
+      console.log("API: Blog posts fetched:", posts.length);
       res.json(posts);
     } catch (error) {
+      console.error("API Error:", error);
       res.status(500).json({ message: "Failed to fetch blog posts" });
     }
   });
