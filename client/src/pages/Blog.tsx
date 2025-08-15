@@ -1,60 +1,341 @@
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { 
+  Calendar, 
+  User, 
+  Search, 
+  Tag, 
+  BookOpen,
+  ChevronRight,
+  Clock
+} from "lucide-react";
 import type { BlogPost } from "@shared/schema";
+import { useMobile } from "@/hooks/use-mobile";
 
 const Blog = () => {
   const { data: posts, isLoading } = useQuery<BlogPost[]>({
     queryKey: ["/api/blog-posts"],
   });
+  
+  const [searchTerm, setSearchTerm] = useState("");
+  const isMobile = useMobile();
+  
+  // Filter posts based on search term
+  const filteredPosts = posts?.filter(post => 
+    post.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+    post.content.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  
+  // Format date
+  const formatDate = (dateString: string | Date) => {
+    return new Date(dateString).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+  };
+  
+  // Extract first paragraph of content
+  const getExcerpt = (content: string) => {
+    // Return first 150 characters followed by ellipsis
+    return content.length > 150 ? `${content.substring(0, 150)}...` : content;
+  };
 
   if (isLoading) {
     return (
-      <div className="pt-20 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center">Loading blog posts...</p>
+      <div className="pt-20">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-r from-[#003366] to-[#006400] text-white py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">
+                Engineering Blog
+              </h1>
+              <p className="text-xl max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Industry insights, technical tips, and company updates
+              </p>
+            </div>
+          </div>
+        </section>
+        
+        <div className="py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Main Content */}
+              <div className="md:col-span-2">
+                {[1, 2, 3].map((n) => (
+                  <Card key={n} className="mb-8 overflow-hidden">
+                    <div className="bg-gray-200 h-64 animate-pulse"></div>
+                    <CardContent className="p-6 space-y-4">
+                      <div className="h-7 bg-gray-200 rounded animate-pulse"></div>
+                      <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+                      <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+                      <div className="h-4 bg-gray-200 rounded animate-pulse w-2/3"></div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+              
+              {/* Sidebar */}
+              <div className="space-y-6">
+                <Card className="p-6">
+                  <div className="h-7 bg-gray-200 rounded animate-pulse mb-4"></div>
+                  <div className="h-10 bg-gray-200 rounded animate-pulse"></div>
+                </Card>
+                <Card className="p-6">
+                  <div className="h-7 bg-gray-200 rounded animate-pulse mb-4"></div>
+                  <div className="space-y-2">
+                    <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+                    <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+                    <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+                  </div>
+                </Card>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
   }
 
-  return (
-    <div className="pt-20 pb-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900">Blog</h1>
-          <p className="mt-4 text-lg text-gray-600">
-            Industry insights and company updates
-          </p>
-        </div>
+  // Get featured post (most recent)
+  const featuredPost = posts && posts.length > 0 ? 
+    [...posts].sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())[0] 
+    : null;
+  
+  // Get remaining posts
+  const remainingPosts = featuredPost ? 
+    filteredPosts?.filter(post => post.id !== featuredPost.id) : 
+    filteredPosts;
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts?.map((post) => (
-            <Card
-              key={post.id}
-              className="overflow-hidden hover:shadow-lg transition-shadow duration-300"
-              data-aos="fade-up"
-            >
-              <img
-                src={post.imageUrl}
-                alt={post.title}
-                className="w-full h-48 object-cover"
-              />
-              <CardContent className="p-6">
-                <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
-                <p className="text-gray-600 mb-4">
-                  {post.content.substring(0, 150)}...
-                </p>
-                <div className="flex justify-between items-center text-sm text-gray-500">
-                  <span>{post.author}</span>
-                  <span>
-                    {new Date(post.publishedAt).toLocaleDateString()}
-                  </span>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+  return (
+    <div className="pt-20">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-[#003366] to-[#006400] text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">
+              Engineering Blog
+            </h1>
+            <p className="text-xl max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+              Industry insights, technical tips, and company updates
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Blog Content */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Featured Post */}
+          {featuredPost && (
+            <div className="mb-16" data-aos="fade-up">
+              <div className="bg-[#E76F00]/10 py-2 px-4 rounded-full text-[#E76F00] font-medium inline-block mb-6">
+                Featured Post
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="rounded-lg overflow-hidden shadow-lg">
+                  <img 
+                    src={featuredPost.imageUrl} 
+                    alt={featuredPost.title} 
+                    className="w-full h-auto"
+                  />
+                </div>
+                
+                <div className="space-y-6">
+                  <h2 className="text-3xl font-bold text-[#003366]">{featuredPost.title}</h2>
+                  
+                  <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                    <div className="flex items-center">
+                      <Calendar className="h-4 w-4 mr-1" />
+                      <span>{formatDate(featuredPost.publishedAt)}</span>
+                    </div>
+                    <div className="flex items-center">
+                      <User className="h-4 w-4 mr-1" />
+                      <span>{featuredPost.author}</span>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-600">
+                    {getExcerpt(featuredPost.content)}
+                  </p>
+                  
+                  <Button
+                    className="bg-[#006400] hover:bg-[#005400] text-white"
+                    onClick={() => alert(`Viewing full post: ${featuredPost.title}`)}
+                  >
+                    Read Article
+                    <ChevronRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Main Content */}
+            <div className="md:col-span-2">
+              <h2 className="text-2xl font-bold text-[#003366] mb-8" data-aos="fade-up">
+                Latest Articles
+              </h2>
+              
+              {remainingPosts && remainingPosts.length > 0 ? (
+                remainingPosts.map((post, index) => (
+                  <Card 
+                    key={post.id} 
+                    className="mb-8 overflow-hidden hover:shadow-lg transition-shadow"
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
+                  >
+                    <div className="md:flex">
+                      <div className="md:w-1/3">
+                        <img
+                          src={post.imageUrl}
+                          alt={post.title}
+                          className="w-full h-full object-cover"
+                          style={{ minHeight: isMobile ? '200px' : '100%' }}
+                        />
+                      </div>
+                      <div className="md:w-2/3 p-6">
+                        <h3 className="text-xl font-semibold text-[#003366] mb-3">{post.title}</h3>
+                        
+                        <div className="flex flex-wrap gap-4 text-sm text-gray-500 mb-4">
+                          <div className="flex items-center">
+                            <Calendar className="h-4 w-4 mr-1" />
+                            <span>{formatDate(post.publishedAt)}</span>
+                          </div>
+                          <div className="flex items-center">
+                            <User className="h-4 w-4 mr-1" />
+                            <span>{post.author}</span>
+                          </div>
+                        </div>
+                        
+                        <p className="text-gray-600 mb-4">
+                          {getExcerpt(post.content)}
+                        </p>
+                        
+                        <Button 
+                          variant="outline"
+                          className="text-[#006400] hover:text-white hover:bg-[#006400] border-[#006400]"
+                          onClick={() => alert(`Viewing full post: ${post.title}`)}
+                        >
+                          Read More
+                          <ChevronRight className="ml-1 h-4 w-4" />
+                        </Button>
+                      </div>
+                    </div>
+                  </Card>
+                ))
+              ) : (
+                <div className="text-center py-8 text-gray-500">
+                  {searchTerm ? "No matching articles found" : "No articles available"}
+                </div>
+              )}
+            </div>
+            
+            {/* Sidebar */}
+            <div className="space-y-6" data-aos="fade-left">
+              {/* Search */}
+              <Card className="p-6">
+                <h3 className="font-semibold text-lg mb-4 text-[#003366]">Search Articles</h3>
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+                  <Input
+                    placeholder="Search by keyword..."
+                    className="pl-9"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                  />
+                </div>
+              </Card>
+              
+              {/* Categories */}
+              <Card className="p-6">
+                <h3 className="font-semibold text-lg mb-4 text-[#003366]">Categories</h3>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between group cursor-pointer">
+                    <div className="flex items-center">
+                      <Tag className="h-4 w-4 mr-2 text-[#E76F00]" />
+                      <span className="text-gray-600 group-hover:text-[#006400]">Refrigeration</span>
+                    </div>
+                    <span className="text-gray-400 text-sm">5</span>
+                  </div>
+                  <div className="flex items-center justify-between group cursor-pointer">
+                    <div className="flex items-center">
+                      <Tag className="h-4 w-4 mr-2 text-[#E76F00]" />
+                      <span className="text-gray-600 group-hover:text-[#006400]">Air Conditioning</span>
+                    </div>
+                    <span className="text-gray-400 text-sm">3</span>
+                  </div>
+                  <div className="flex items-center justify-between group cursor-pointer">
+                    <div className="flex items-center">
+                      <Tag className="h-4 w-4 mr-2 text-[#E76F00]" />
+                      <span className="text-gray-600 group-hover:text-[#006400]">Ventilation</span>
+                    </div>
+                    <span className="text-gray-400 text-sm">2</span>
+                  </div>
+                  <div className="flex items-center justify-between group cursor-pointer">
+                    <div className="flex items-center">
+                      <Tag className="h-4 w-4 mr-2 text-[#E76F00]" />
+                      <span className="text-gray-600 group-hover:text-[#006400]">LP Gas</span>
+                    </div>
+                    <span className="text-gray-400 text-sm">1</span>
+                  </div>
+                </div>
+              </Card>
+              
+              {/* Recent Posts */}
+              <Card className="p-6">
+                <h3 className="font-semibold text-lg mb-4 text-[#003366]">Recent Posts</h3>
+                <div className="space-y-4">
+                  {posts?.slice(0, 3).map(post => (
+                    <div key={post.id} className="flex items-start space-x-3 group cursor-pointer">
+                      <div className="flex-shrink-0 w-12 h-12 rounded overflow-hidden">
+                        <img 
+                          src={post.imageUrl} 
+                          alt={post.title} 
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-gray-800 group-hover:text-[#006400] text-sm">
+                          {post.title}
+                        </h4>
+                        <div className="flex items-center text-xs text-gray-500 mt-1">
+                          <Clock className="h-3 w-3 mr-1" />
+                          <span>{formatDate(post.publishedAt)}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+              
+              {/* About Blog */}
+              <Card className="p-6 bg-[#006400]/5">
+                <div className="flex items-center space-x-2 mb-4">
+                  <BookOpen className="h-5 w-5 text-[#006400]" />
+                  <h3 className="font-semibold text-lg text-[#003366]">About Our Blog</h3>
+                </div>
+                <p className="text-gray-600 mb-4">
+                  Stay updated with the latest trends in engineering, technology updates, and insights from our experienced team at WILMAK Engineering.
+                </p>
+                <Button
+                  variant="outline"
+                  className="w-full text-[#006400] hover:bg-[#006400] hover:text-white border-[#006400]"
+                  onClick={() => window.location.href = "/#contact"}
+                >
+                  Subscribe to Updates
+                </Button>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
