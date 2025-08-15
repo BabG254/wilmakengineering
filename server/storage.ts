@@ -7,7 +7,7 @@ import {
   insertProjectSchema,
   insertTestimonialSchema,
   insertBlogPostSchema
-} from "../shared/schema";
+} from "@shared/schema";
 
 // Define storage interface with CRUD methods
 export interface IStorage {

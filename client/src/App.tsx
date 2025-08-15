@@ -15,6 +15,10 @@ import Blog from "@/pages/Blog";
 import Reviews from "@/pages/Reviews";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
+import ProjectsDebug from "@/pages/ProjectsDebug";
+import ProjectsStatic from "@/pages/ProjectsStatic";
+import BlogDebug from "@/pages/BlogDebug";
+import BlogStatic from "@/pages/BlogStatic";
 
 function Router() {
   const [isLoading, setIsLoading] = useState(true);
@@ -47,8 +51,10 @@ function Router() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/projects" component={Projects} />
-          <Route path="/blog" component={Blog} />
+          <Route path="/projects" component={ProjectsStatic} />
+          <Route path="/projects-debug" component={ProjectsDebug} />
+          <Route path="/blog" component={BlogStatic} />
+          <Route path="/blog-debug" component={BlogDebug} />
           <Route path="/reviews" component={Reviews} />
           <Route path="/contact" component={Contact} />
           <Route component={NotFound} />
