@@ -65,7 +65,7 @@ const Projects = () => {
   const categories = ["all", ...Array.from(new Set(staticProjects.map((project) => project.category)))];
 
   // Function to format date
-  const formatDate = (dateString) => {
+  const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",

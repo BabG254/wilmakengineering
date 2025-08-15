@@ -67,7 +67,7 @@ const BlogStatic = () => {
   );
   
   // Format date
-  const formatDate = (dateString) => {
+  const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
@@ -76,7 +76,7 @@ const BlogStatic = () => {
   };
   
   // Extract first paragraph of content
-  const getExcerpt = (content) => {
+  const getExcerpt = (content: string) => {
     // Return first 150 characters followed by ellipsis
     return content.length > 150 ? `${content.substring(0, 150)}...` : content;
   };
