@@ -20,7 +20,7 @@ const partners = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Mitsubishi_Electric_logo.svg/2560px-Mitsubishi_Electric_logo.svg.png"
   },
   {
-    name: "Carrier",
+    name: "Caterina",
     logo: "https://www.carrier.com/carrier/en/worldwide/-/media/carrier/banner/carrier-logo.svg"
   },
   {
