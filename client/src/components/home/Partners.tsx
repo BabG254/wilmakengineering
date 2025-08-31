@@ -9,23 +9,23 @@ const partners = [
   },
   {
     name: "LG",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/b/bf/LG_logo_%282015%29.svg"
+    logo: "/assets/LG.png"
   },
   {
     name: "Daikin",
-    logo: "https://www.daikin.com/-/media/Project/Daikin/daikin_com/common/img/common/daikin_logo.png"
+    logo: "/assets/Daikin-Logo.jpg"
   },
   {
     name: "Mitsubishi Electric",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Mitsubishi_Electric_logo.svg/2560px-Mitsubishi_Electric_logo.svg.png"
+    logo: "/assets/Mitsubishi.png"
   },
   {
     name: "Caterina",
-    logo: "https://www.carrier.com/carrier/en/worldwide/-/media/carrier/banner/carrier-logo.svg"
+    logo: "/assets/caterina.png"
   },
   {
     name: "Trane",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/8/83/Trane_logo.svg"
+    logo: "/assets/Trane.png"
   }
 ];
 

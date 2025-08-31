@@ -20,84 +20,84 @@ const services = [
   {
     title: "Refrigeration",
     icon: Snowflake,
-    image: "https://images.unsplash.com/photo-1607582544956-a793312325c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    image: "/assets/Refrigiration.jpeg",
     description:
       "Commercial and industrial refrigeration solutions with expert installation and maintenance.",
   },
   {
     title: "Air Conditioning & HVAC",
     icon: Fan,
-    image: "https://images.unsplash.com/photo-1586813551819-52de34c2548b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    image: "/assets/Air Conditioning & HVAC.png",
     description:
       "Complete HVAC services including VRV systems, chillers, and split units for all spaces.",
   },
   {
     title: "Cold Rooms",
     icon: Snowflake,
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    image: "/assets/cold-rooooom.jpg",
     description:
       "Professional cold room installation and maintenance for food storage and preservation.",
   },
   {
     title: "Mechanical Ventilation",
     icon: Waves,
-    image: "https://images.unsplash.com/photo-1585503418537-88331351ad99?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    image: "/assets/Mechanical Ventilation.jpeg",
     description:
       "Advanced mechanical ventilation systems for optimal air quality and circulation.",
   },
   {
     title: "LP Gas Systems",
     icon: FlameKindling,
-    image: "https://images.unsplash.com/photo-1623911329432-e2cbd7760e5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    image: "/assets/LP Gas System.png",
     description:
       "Professional LP gas installation and maintenance services for all applications.",
   },
   {
     title: "Kitchen Equipment",
     icon: UtensilsCrossed,
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    image: "/assets/Kitchen Equipment.jpg",
     description:
       "Commercial kitchen equipment installation, repair, and maintenance.",
   },
   {
     title: "Core Drilling",
     icon: Drill,
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    image: "/assets/Core Drilling.jpg",
     description:
       "Precision core drilling services for concrete, masonry, and structural applications.",
   },
   {
     title: "Borehole Services",
     icon: Droplets,
-    image: "https://images.unsplash.com/photo-1574263867128-83d21d7abfb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    image: "/assets/Borehole Services.jpg",
     description:
       "Complete borehole drilling, pump installation, and water system maintenance services.",
   },
   {
     title: "Installation of Signages",
     icon: SignpostBig,
-    image: "https://images.unsplash.com/photo-1535732820275-9ffd998cac22?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    image: "/assets/Installation of Signages.jpg",
     description:
       "Professional signage installation for commercial and industrial properties.",
   },
   {
     title: "Sauna & Steam Bath",
     icon: Bath,
-    image: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    image: "/assets/Sauna & Steam Bath.jpg",
     description:
       "Expert installation and maintenance of sauna and steam bath facilities.",
   },
   {
     title: "Scaffolding & Ladder Rental",
     icon: HardHat,
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    image: "/assets/Scaffolding & Ladder Rental.jpg",
     description:
       "Professional scaffolding and ladder rental services for construction and maintenance projects.",
   },
   {
     title: "Laundry Equipment",
     icon: Wrench,
-    image: "https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    image: "/assets/Laundry Equipment.png",
     description:
       "Industrial laundry equipment solutions and maintenance services.",
   },
